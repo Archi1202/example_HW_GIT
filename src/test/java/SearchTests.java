@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -20,5 +21,13 @@ public class SearchTests {
         $("[name=q]").setValue("selenide").pressEnter();
         $("[id=search]").shouldNot(text("https://selenideeee.org"));
         Selenide.closeWindow();
+    }
+
+    @Test
+    void searchInFlip(){
+        open("https://www.flip.kz");
+        $(By.xpath("/html//input[@id='search_input']")).setValue("казахстан").pressEnter();
+        $("filter-left").isDisplayed();
+
     }
 }
