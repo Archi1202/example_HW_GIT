@@ -1,9 +1,8 @@
 public class Main {
-    public static void main(String[] args){
-        System.out.println(getMessage());
-    }
 
-    private static String getMessage(){
-        return "!!!!QA.GURU!!!!";
+    private static String msg = "HELLOOO!!!";
+    
+    public static void main(String[] args){
+        System.out.println(msg);
     }
 }
